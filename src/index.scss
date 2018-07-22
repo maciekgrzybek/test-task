@@ -1,0 +1,81 @@
+$colours-list: (
+  brand-1: #00585e,
+  brand-2: #009494,
+  brand-3: #f5f2dc,
+  brand-4: #454445,
+  brand-5: #ff5729
+);
+@each $key, $value in $colours-list {
+  $i: index($colours-list, $key $value);
+  $arrayLength: length($colours-list);
+  .box {
+    &__item {
+      &:nth-child(#{$arrayLength}n + #{$i}) {
+        background-color: $value;
+      }
+    }
+  }
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+  text-align: center;
+  font-size: 50px;
+  padding: 60px 0;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button {
+  font-size: 40px;
+  background: black;
+  color: white;
+  padding: 30px;
+  border: none;
+  transition: 0.4s;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.result {
+  font-size: 55px;
+  padding: 60px 0;
+  font-weight: 500;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  max-width: 1400px;
+  width: 90%;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  &__item {
+    width: 50%;
+    flex: 0 0 auto;
+    font-size: 40px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+  }
+  @media only screen and (min-width: 768px) {
+    &__item {
+      width: 25%;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    &__item {
+      width: calc(100% / 6);
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    &__item {
+      width: calc(100% / 9);
+    }
+  }
+}
