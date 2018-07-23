@@ -1,7 +1,7 @@
 import './index.scss';
 
 // prettier-ignore
-const INITIAL_ARRAY = [3,7,'d','3',7,8,'df',[1,23,'p'],23,6,2,67,'g','34',12,34,5];
+const INITIAL_ARRAY = [3,7,'df','3',7,8,'df',23,6,2,67,'g','34',12,34,5];
 
 const isNumeric = (n) => !isNaN(parseFloat(n)) && isFinite(n);
 
